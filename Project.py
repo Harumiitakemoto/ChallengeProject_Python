@@ -29,20 +29,21 @@ def registrar_doacao():
 def cadastrar_voluntario():
     nome = input("Nome do voluntário: ")
     area = input("Área de atuação (ex: dentista, psicólogo, apoio): ")
-    voluntarios.append({"nome": nome, "area": area})
+    email = input("Email do voluntário: ")
+    voluntarios.append({"nome": nome, "area": area, "email": email})
     print(f"\n Voluntário {nome} cadastrado na área de {area}.\n")
 
 def listar_cadastros():
     print("===== LISTA DE CADASTROS =====")
     print("Doadores:")
     for d in doadores:
-        print(f"- {d['nome']} ({d['email']})")
+        print(f"- {d['nome']} | {d['email']} | {d['contato']}")
     print("Doações:")
     for d in doacoes:
         print(f"- {d['nome']} → R$ {d['valor']}")
     print("Voluntários:")
     for v in voluntarios:
-        print(f"- {v['nome']} ({v['area']})")
+        print(f"- {v['nome']}| {v['area']} | {v['email']}")
     print()
 
 # Menu
